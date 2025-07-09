@@ -7,23 +7,39 @@ import Star from "@/assets/iconos/star.svg";
 
 export const STATS: Stat[] = [
   {
-    icon: Users,
-    statsinfo: "500+",
-    title: "Miembros Activos"
+    id: 'users',
+    name: 'Users',
+    image: {
+      logo: Users
+    },
+    statsinfo: '500+',
+    title: 'Miembros Activos'
   },
   {
-    icon: Trophy,
-    statsinfo: "50+",
-    title: "Transformaciones"
+    id: 'trophy',
+    name: 'Trophy',
+    image: {
+      logo: Trophy
+    },
+    statsinfo: '50+',
+    title: 'Transformaciones'
   },
   {
-    icon: Dumbell,
-    statsinfo: "200+",
-    title: "Equipos Modernos"
+    id: 'dumbell',
+    name: 'Dumbell',
+    image: {
+      logo: Dumbell
+    },
+    statsinfo: '200+',
+    title: 'Equipos Modernos'
   },
   {
-    icon: Star,
-    statsinfo: "4.9",
-    title: "Calificación"
+    id: 'star',
+    name: 'Star',
+    image: {
+      logo: Star
+    },
+    statsinfo: '4.9',
+    title: 'Calificación'
   }
-]
+] as const

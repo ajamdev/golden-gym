@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"section">;
+
+const { ...props } = Astro.props;
+---
+
+<section class={Astro.props.class} {...props}>
+  <div class="container mx-auto p-4 md:px-6 lg:px-48 lg:py-7 w-full h-full">
+    <slot />
+  </div>
+</section>

@@ -1,0 +1,32 @@
+---
+import Section from "@/components/section.astro";
+import Users from "@/assets/iconos/users.svg";
+import Trophy from "@/assets/iconos/trophy.svg";
+import Dumbell from "@/assets/iconos/dumbell.svg";
+import Star from "@/assets/iconos/star.svg";
+---
+
+<Section class="bg-scondary">
+  <div class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5">
+    <div class="flex flex-col items-center justify-center space-y-2">
+      <Users class="size-14" />
+      <span class="text-4xl font-semibold">500+</span>
+      <p class="font-semibold">Miembros Activos</p>
+    </div>
+    <div class="flex flex-col items-center justify-center space-y-2">
+      <Trophy class="size-14" />
+      <span class="text-4xl font-semibold">50+</span>
+      <p class="font-semibold">Transformaciones</p>
+    </div>
+    <div class="flex flex-col items-center justify-center space-y-2">
+      <Dumbell class="size-14" />
+      <span class="text-4xl font-semibold">200+</span>
+      <p class="font-semibold">Equipos Modernos</p>
+    </div>
+    <div class="flex flex-col items-center justify-center space-y-2">
+      <Star class="size-14" />
+      <span class="text-4xl font-semibold">4.9</span>
+      <p class="font-semibold">Calificación</p>
+    </div>
+  </div>
+</Section>

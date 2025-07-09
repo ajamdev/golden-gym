@@ -1,0 +1,38 @@
+---
+import Section from "@/components/section.astro";
+import Info from "@/assets/iconos/info.svg";
+---
+
+<Section class="relative h-dvh">
+  <div
+    class="absolute inset-0 -z-10 bg-[image:var(--bg-cover-mobile)] lg:bg-[image:var(--bg-cover)] bg-cover bg-center w-full h-full"
+  >
+  </div>
+  <div
+    class="flex flex-col items-center justify-center h-full w-full lg:w-[32rem] space-y-8"
+  >
+    <h1
+      class="text-6xl lg:text-8xl font-bold text-balance text-scondary capitalize"
+    >
+      Transforma tu vida
+    </h1>
+    <p class="text-slate-50 text-wrap text-shadow-2xs">
+      Únete a la comunidad fitness más exitosa de la ciudad. Con equipos de
+      última generación, entrenadores certificados y programas personalizados,
+      te ayudamos a alcanzar tus metas.
+    </p>
+    <div class="flex items-center gap-4 w-full">
+      <a
+        class="inline-flex items-center justify-center space-x-4 bg-scondary px-4 py-2 rounded-lg lg:hover:bg-golden transition-colors duration-300"
+        href="/#"
+      >
+        <Info class="size-7" />
+        <span class="font-semibold">Prueba Gratuita</span>
+      </a>
+      <a
+        class="border-2 border-slate-50 px-4 py-2 rounded-lg text-slate-50 lg:hover:bg-slate-50 lg:hover:text-primary transition-colors duration-300 font-semibold"
+        href="/#">Ver planes</a
+      >
+    </div>
+  </div>
+</Section>

@@ -1,11 +1,21 @@
-type Stats =
-  | "users"
-  | "trophy"
-  | "dumbell"
-  | "star"
+type statsId =
+  | 'users'
+  | 'trophy'
+  | 'dumbell'
+  | 'star'
+
+type statsName =
+  | 'Users'
+  | 'Trophy'
+  | 'Dumbell'
+  | 'Star'
 
 export interface Stat {
-  icon: any,
-  statsinfo: string,
+  id: statsId
+  name: statsName
+  image: {
+    logo: any
+  }
+  statsinfo: string
   title: string
 }

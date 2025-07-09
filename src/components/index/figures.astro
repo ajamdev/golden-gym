@@ -6,12 +6,12 @@ import { STATS } from "@/const/stats";
 <Section class="bg-scondary">
   <div class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5">
     {
-      STATS.map((stat) => (
+      STATS.map(({ image, statsinfo, title }) => (
         <div class="flex flex-col items-center justify-center space-y-2">
-          <stat.icon class="size-14" />
+          <image.logo class="size-14" />
           <div class="flex flex-col items-center justify-center space-y-1.5">
-            <span class="text-4xl font-semibold">{stat.statsinfo}</span>
-            <p class="font-semibold">{stat.title}</p>
+            <span class="text-4xl font-semibold">{statsinfo}</span>
+            <p class="font-semibold">{title}</p>
           </div>
         </div>
       ))

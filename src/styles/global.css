@@ -2,5 +2,10 @@
 @theme {
   --color-primary: hsl(0, 0%, 10%);
   --color-scondary: hsl(51, 100%, 50%);
-  --color-golden: hsl(40, 100%, 75%)
+  --color-golden: hsl(40, 100%, 75%);
+}
+
+:root {
+  --bg-cover: url("/all-image/bg/cover-gm.avif");
+  --bg-cover-mobile: url('/all-image/bg/bg-mobile-v.avif')
 }

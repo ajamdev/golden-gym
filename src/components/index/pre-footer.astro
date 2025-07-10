@@ -1,0 +1,112 @@
+---
+import Section from "@/components/section.astro";
+import MapPin from "@/assets/iconos/map-pin.svg";
+import Phone from "@/assets/iconos/phone.svg";
+import Clock from "@/assets/iconos/clock.svg";
+import Mail from "@/assets/iconos/mail.svg";
+import { FORM } from "@/const/form";
+---
+
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <h2 class="text-4xl font-bold mb-6 text-scondary text-balance">
+        Contáctanos
+      </h2>
+      <p class="text-slate-50 text-wrap text-xl mb-8">
+        ¿Listo para comenzar tu transformación? Contáctanos hoy mismo.
+      </p>
+      <div class="space-y-6">
+        <div class="flex items-center">
+          <MapPin class="size-6 mr-4 text-scondary" />
+          <div>
+            <div class="font-semibold text-slate-50">Direccion</div>
+            <div class="text-gray-400">Av. Principal 123, Centro, Ciudad</div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <Phone class="size-6 mr-4 text-scondary" />
+          <div>
+            <div class="font-semibold text-slate-50">Teléfono</div>
+            <div class="text-gray-400">+1 (555) 123-4567</div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <Mail class="size-6 mr-4 text-scondary" />
+          <div>
+            <div class="font-semibold text-slate-50">Email</div>
+            <div class="text-gray-400">info@goldengym.com</div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <Clock class="size-6 mr-4 text-scondary" />
+          <div>
+            <div class="font-semibold text-slate-50">Horarios</div>
+            <div class="text-gray-400">
+              Lun-Vie: 5:00-23:00 | Sáb-Dom: 7:00-21:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-900/50 border-gray-700 border-2 rounded-lg">
+      <div class="p-8">
+        <h3 class="mb-6 text-2xl font-bold text-scondary">
+          Solicita tu Prueba Gratuita
+        </h3>
+        <form class="text-slate-50 space-y-4">
+          <div>
+            <label class="sr-only" for="name">Nombre</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nombre"
+              class="w-full p-2 border-2 border-gray-700 rounded-lg"
+            />
+          </div>
+          <div>
+            <label class="sr-only" for="mail">Correo</label>
+            <input
+              type="email"
+              name="mail"
+              id="mail"
+              placeholder="Correo"
+              class="w-full p-2 border-2 border-gray-700 rounded-lg"
+            />
+          </div>
+          <div>
+            <label class="sr-only" for="phone">Teléfono</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="Teléfono"
+              class="w-full p-2 border-2 border-gray-700 rounded-lg"
+            />
+          </div>
+          <div>
+            <select
+              name="plan"
+              id="plan"
+              class="w-full p-2 border-2 border-gray-700 rounded-lg text-gray-500"
+            >
+              {
+                FORM.map(({ id, name }) => (
+                  <option value={id} class="text-primary">
+                    {name}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-scondary text-primary font-semibold rounded-lg px-4 py-2 lg:hover:bg-golden transition-colors duration-300"
+            >Solicitar prueba gratis</button
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</Section>

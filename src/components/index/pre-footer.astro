@@ -86,12 +86,13 @@ import Caret from "@/assets/iconos/caret.svg";
               class="w-full p-2 border-2 border-gray-700 rounded-lg"
             />
           </div>
-          <div class="relative group">
+          <div class="relative">
             <select
               name="plan"
               id="plan"
-              class="w-full p-2 border-2 border-gray-700 rounded-lg text-gray-500 appearance-none focus:outline-none focus:border-2 focus:border-scondary"
+              class="peer w-full p-2 border-2 border-gray-700 rounded-lg text-gray-500 appearance-none focus:outline-none focus:border-2 focus:border-scondary"
             >
+              <option value="" disabled selected>Selecciona un plan</option>
               {
                 FORM.map(({ id, name }) => (
                   <option value={id} class="text-primary">
@@ -101,11 +102,9 @@ import Caret from "@/assets/iconos/caret.svg";
               }
             </select>
             <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 group"
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 transition-transform duration-300 peer-focus:rotate-x-180"
             >
-              <Caret
-                class="size-5 group-focus:rotate-180 transition-transform duration-300"
-              />
+              <Caret class="size-5" />
             </div>
           </div>
           <button

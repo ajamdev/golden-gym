@@ -5,6 +5,7 @@ import Phone from "@/assets/iconos/phone.svg";
 import Clock from "@/assets/iconos/clock.svg";
 import Mail from "@/assets/iconos/mail.svg";
 import { FORM } from "@/const/form";
+import Caret from "@/assets/iconos/caret.svg";
 ---
 
 <Section>
@@ -85,11 +86,11 @@ import { FORM } from "@/const/form";
               class="w-full p-2 border-2 border-gray-700 rounded-lg"
             />
           </div>
-          <div>
+          <div class="relative group">
             <select
               name="plan"
               id="plan"
-              class="w-full p-2 border-2 border-gray-700 rounded-lg text-gray-500"
+              class="w-full p-2 border-2 border-gray-700 rounded-lg text-gray-500 appearance-none focus:outline-none focus:border-2 focus:border-scondary"
             >
               {
                 FORM.map(({ id, name }) => (
@@ -99,6 +100,13 @@ import { FORM } from "@/const/form";
                 ))
               }
             </select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 group"
+            >
+              <Caret
+                class="size-5 group-focus:rotate-180 transition-transform duration-300"
+              />
+            </div>
           </div>
           <button
             type="submit"

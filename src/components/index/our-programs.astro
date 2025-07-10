@@ -1,15 +1,51 @@
 ---
 import Section from "@/components/section.astro";
+import { PLAN } from "@/const/plan";
 ---
 
 <Section>
-  <div class="flex flex-col items-center justify-center space-y-8">
-    <h2 class="text-2xl font-bold md:text-5xl text-scondary mb-4">
-      Nuestros Programas
-    </h2>
-    <p class="text-slate-50">
-      Programas diseñados por expertos para diferentes objetivos y niveles de
-      condición física
-    </p>
+  <div class="space-y-9">
+    <div class="flex flex-col items-center justify-center space-y-8">
+      <h2 class="text-2xl font-bold md:text-5xl text-scondary mb-4">
+        Nuestros Programas
+      </h2>
+      <p class="text-slate-50">
+        Programas diseñados por expertos para diferentes objetivos y niveles de
+        condición física
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {
+        PLAN.map(({ id, name, link, description, list }) => (
+          <div class="group bg-gray-900/50 border-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#FFD700]/20 overflow-hidden rounded-xl">
+            <div class="aspect-[16/9] w-full overflow-hidden">
+              <img
+                src={`/all-image/img-cards/${id}.avif`}
+                alt={name}
+                class="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div class="flex flex-col  space-y-4 p-6">
+              <h3 class="text-2xl font-bold text-scondary">{name}</h3>
+              <p class="text-slate-50">{description}</p>
+              <ul class="list-inside ml-2 space-y-2">
+                {list.map((item) => (
+                  <li class="flex items-center text-slate-400">
+                    <div class="mr-2 h-1.5 w-1.5 rounded-full bg-scondary" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                class="w-full bg-golden flex items-center justify-center text-primary hover:bg-scondary transition-colors duration-300 font-semibold rounded-lg px-4 py-2"
+                href={link}
+              >
+                Más información
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </Section>

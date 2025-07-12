@@ -1,0 +1,34 @@
+---
+import Section from "@/components/section.astro";
+import Shield from "@/assets/iconos/shield.svg";
+---
+
+<Section class="relative">
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-scondary to-golden text-primary"
+  >
+  </div>
+  <div class="mx-auto text-center">
+    <h2 class="mb-4 text-2xl md:text-4xl font-bold text-balance">
+      ¿Listo para comenzar tu transformación?
+    </h2>
+    <p class="mb-8 text-xl text-pretty">
+      Únete a más de 500 miembros que ya están alcanzando sus objetivos
+    </p>
+    <div class="flex items-center justify-center gap-4">
+      <a
+        href="#"
+        class="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-scondary font-semibold hover:bg-gray-900 transition-colors duration-300"
+      >
+        <Shield class="size-5 mr-2" />
+        Prueba gratuita 5 días
+      </a>
+      <a
+        href="#"
+        class="border-2 border-primary px-4 py-2 rounded-lg font-semibold hover:bg-primary hover:text-scondary transition-colors duration-300"
+      >
+        Hablar con un asesor
+      </a>
+    </div>
+  </div>
+</Section>

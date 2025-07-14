@@ -1,21 +1,63 @@
 ---
+import { PATHS } from "@/const/paths";
 import Link from "./link.astro";
+import GoldenGym from "@/assets/isotipo/golden-gym.svg";
 ---
 
-<header class="container mx-auto p-4 md:px-6 lg:px-48 lg:py-7 w-full h-full">
-  <div>
-    <nav>
-      <ul class="flex space-x-4 items-center">
-        <li>
-          <Link
-            class="lg:hover:text-scondary lg:text-gray-50 w-full h-full block py-2 px-4 rounded-lg"
-            href="/">Home</Link
-          >
-        </li>
-        <li>
-          <Link href="/planes">Planes</Link>
-        </li>
-      </ul>
-    </nav>
+<header
+  id="navbar"
+  class="fixed hidden lg:block top-0 left-0 z-50 transition-colors duration-300 bg-transparent w-full animate"
+>
+  <div class="container mx-auto p-4 md:px-6 lg:px-48 w-full h-full">
+    <div class="flex justify-between items-center">
+      <GoldenGym id="logo" class="h-12 text-scondary" />
+      <nav>
+        <ul class="flex space-x-4 items-center">
+          <li>
+            <Link
+              class="lg:hover:text-scondary lg:text-gray-50 w-full h-full block py-2 px-4 rounded-lg"
+              href="/"
+            >
+              Inicio
+            </Link>
+          </li>
+          {
+            PATHS.map(({ url, name }) => (
+              <li>
+                <Link
+                  class="lg:hover:text-scondary lg:text-gray-50 w-full h-full block py-2 px-4 rounded-lg"
+                  href={`/${url}`}
+                >
+                  {name}
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
+
+<script type="module">
+  let lastScroll = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      // Scroll hacia abajo
+      navbar.classList.remove("bg-transparent");
+      navbar.classList.add("bg-black");
+    } else if (currentScroll < lastScroll) {
+      // Scroll hacia arriba
+      if (currentScroll <= 50) {
+        navbar.classList.remove("bg-black");
+        navbar.classList.add("bg-transparent");
+      }
+    }
+
+    lastScroll = currentScroll;
+  });
+</script>
